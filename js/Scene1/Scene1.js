@@ -1,4 +1,4 @@
-import GameManager from "../GameManager";
+import GameManager from "../GameManager.js";
 
 export default class scene1{
     constructor(){

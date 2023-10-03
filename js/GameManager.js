@@ -8,6 +8,7 @@ export default class GameManager{
         if(GameManager.instance){
             return GameManager.instance
         }
+        this.GameManager.instance = this;
         this.menu = document.getElementById('menu');
         this.scene1 = document.getElementById('scene1');
         this.scene2 = document.getElementById('scene2');

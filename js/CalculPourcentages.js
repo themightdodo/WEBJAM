@@ -1,6 +1,6 @@
 import GameManager from "./GameManager.js";
 
-export default class GameManager{
+export default class CalculPourcentages{
 
     constructor(){
         this.gameManager = new GameManager(); 
