@@ -7,6 +7,7 @@ export default class scene1{
         this.calcul = this.gameManager.CalculPourcentages;
         this.Affiches = this.gameManager.Affiches;
         this.test = this.scene1.querySelector('#test');
+        this.first = true;
     }
 
     instanciate(id){
@@ -24,16 +25,20 @@ export default class scene1{
     }
 
     setupScene(){
-        var combinaison = this.calcul.Get_combinaisons();
-        combinaison.forEach(combi_elem => {
-            this.Affiches.forEach(element => {
-                if(combi_elem == element.name){
-                    this.instanciate(this.Affiches.indexOf(element.name));
-                }
+        if(!this.first){
+            var combinaison = this.calcul.Get_combinaisons();
+            combinaison.forEach(combi_elem => {
+                this.Affiches.forEach(element => {
+                    if(combi_elem == element.name){
+                        this.instanciate(this.Affiches.indexOf(element.name));
+                    }
+                });
             });
-        });
+        }
+
         this.test.addEventListener('click', function(){
             this.calcul.initCombinaison();
+            this.first = false;
         }.bind(this));
     }
 }
