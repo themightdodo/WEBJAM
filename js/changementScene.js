@@ -12,11 +12,15 @@
 //     }
 // }
 
-class changementScene{
+import GameManager  from "./GameManager.js";
+
+export default class changementScene{
     constructor(){
-        this.menu = document.getElementById('menu');
-        this.scene1 = document.getElementById('scene1');
-        this.scene2 = document.getElementById('scene2');
+        this.gameManager = new GameManager();
+        this.Scene1 = this.gameManager.scene1_;
+        this.menu = gameManager.menu;
+        this.scene1 = gameManager.scene1;
+        this.scene2 = gameManager.scene2;
         this.button1 = this.menu.querySelector('button');
         this.button2 = this.scene1.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
@@ -32,7 +36,7 @@ class changementScene{
         this.scene2.style.display = 'none';
     }
     initScene1(){
-        
+        this.Scene1.setupScener();
     }
     menuScene1(){
         this.menu.style.display = 'none';
