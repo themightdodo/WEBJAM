@@ -18,7 +18,7 @@ export default class scene1 {
         var type = "";
         img.src = element.declinaison1;
         type = element.type;
-        this.scene1.append(affiche);
+        this.gameManager.objets.append(affiche);
         affiche.append(img);
         affiche.addEventListener("click", function () {
             this.gameManager.onClickAffiche(element.type)
@@ -26,7 +26,12 @@ export default class scene1 {
     }
 
     setupScene(tour) {
-        var combinaison = this.calcul.Get_combinaisons();
+        this.calcul.CheckBuffer();
+        console.log('combo : ' + this.calcul.combo);
+        if(!this.calcul.combo){
+            console.log("MARFCHE");
+            var combinaison = this.calcul.Get_combinaisons();
+        }
         if (tour > 1) {
             combinaison.forEach(combi_elem => {
                 this.Affiches.forEach(element => {

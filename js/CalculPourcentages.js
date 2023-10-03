@@ -8,7 +8,7 @@ export default class CalculPourcentages{
         this.jaugeBleu = 0;
         this.jaugeRouge = 0;
         this.jaugeVert = 0;
-
+        this.combo = false;
         this.comboBuffer = [];
 
         this.combos = {
@@ -68,11 +68,13 @@ export default class CalculPourcentages{
     CheckBuffer(){
         for (let i = 1; i <= 4; i++) {
             this.comboBuffer.forEach(element => {
-                if(combos[i] === element){
-                    return this.combinaisons[combos[i].combinaison];
+                if(this.combos[i] === element){
+                    this.combo = true;
+                    return this.combinaisons[this.combos[i].combinaison];
                 }
             });
         }
+        this.combo = false;
         return null;
     }
 
@@ -125,10 +127,10 @@ export default class CalculPourcentages{
     }
 
     Calcul_Rouge(){
-        this.combinaisons[2].pourcentage += 20;
-        this.combinaisons[3].pourcentage += 10;
+        this.combinaisons[2].pourcentage += 30;
+        this.combinaisons[3].pourcentage += 15;
         this.combinaisons[4].pourcentage += 5;
-        this.combinaisons[5].pourcentage += 5;
+        this.combinaisons[5].pourcentage += 10;
         
         var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
@@ -157,7 +159,7 @@ export default class CalculPourcentages{
 
     Calcul_Bleu(){
         this.combinaisons[2].pourcentage += 20;
-        this.combinaisons[3].pourcentage += 10;
+        this.combinaisons[3].pourcentage += 20;
         this.combinaisons[4].pourcentage += 5;
         this.combinaisons[5].pourcentage += 5;
         
@@ -187,33 +189,41 @@ export default class CalculPourcentages{
     }
 
     Get_combinaisons(){
-        // var randomInt = Math.random() * 100;
-        var randomInt = 0;
+        var randomInt = Math.random() * 100;
+        // var randomInt = 0;
         var interval0 = 0;
-        var interval1 = 20;
+        var interval1 = this.combinaisons[1].pourcentage;
         var interval2 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage;
         var interval3 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage;
         var interval4 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage;
         var interval5 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
+    
+        console.log('random' + randomInt);
 
-        if(interval0 <= randomInt < interval1){
+        if(interval0 <= randomInt && randomInt < interval1){
+            console.log('interval 1 ' + interval1);
             return this.combinaisons[1].suite;
         }
-        if(interval1 <= randomInt < interval2){
+        if(interval1 <= randomInt && randomInt < interval2){
+            console.log("interval 2");
             return this.combinaisons[2].suite;
         }
-        if(interval2 <= randomInt < interval3){
+        if(interval2 <= randomInt && randomInt < interval3){
+            console.log("interval 3");
             return this.combinaisons[3].suite;
         }
-        if(interval3 <= randomInt < interval4){
+        if(interval3 <= randomInt && randomInt < interval4){
+            console.log("interval 4");
             return this.combinaisons[4].suite;
         }
-        if(interval4 <= randomInt < interval5){
+        if(interval4 <= randomInt && randomInt < interval5){
+            console.log("interval 5");
             return this.combinaisons[5].suite;
         }
         if(randomInt == 100){
             return this.combinaisons[5].suite;
         }
+
     }
 
 }

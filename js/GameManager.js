@@ -14,6 +14,7 @@ export default class GameManager{
         this.menu = document.getElementById('menu');
         this.scene1 = document.getElementById('scene1');
         this.scene2 = document.getElementById('scene2');
+        this.objets = this.scene1.querySelector('.objets');
         this.CalculPourcentages = new CalculPourcentages();
         this.scene1_ = new Scene1();
         
@@ -27,27 +28,24 @@ export default class GameManager{
         }
     }
     onClickAffiche(type){
+
+        this.CalculPourcentages.Add_to_buffer(type);
         if(type == this.type.rouge){
             this.CalculPourcentages.Add_Rouge();
-            if(this.CalculPourcentages.CheckBuffer()){
-                
+            if(!this.CalculPourcentages.combo){
+                this.CalculPourcentages.Calcul_Rouge();
             } 
-            else{this.CalculPourcentages.Calcul_Rouge();}
-            
         }
         if(type == this.type.vert){
             this.CalculPourcentages.Add_Vert();
-            if(this.CalculPourcentages.CheckBuffer()){
-
+            if(!this.CalculPourcentages.combo){
+                this.CalculPourcentages.Calcul_Vert();
             } 
-            else{this.CalculPourcentages.Calcul_Vert();}
         }
         if(type == this.type.bleu){
             this.CalculPourcentages.Add_Bleu();
-            if(this.CalculPourcentages.CheckBuffer()){
-
-            } 
-            else{this.CalculPourcentages.Calcul_Bleu();
+            if(!this.CalculPourcentages.combo){
+                this.CalculPourcentages.Calcul_Bleu();
             }
         }
 
