@@ -63,10 +63,10 @@ export default class CalculPourcentages{
         var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
         if( sum > 100){
-            this.combinaisons[1].pourcentage += 5;
+            this.combinaisons[1].pourcentage = 5;
         }
         else{
-            this.combinaisons[1].pourcentage += 100 - sum;
+            this.combinaisons[1].pourcentage = 100 - sum;
         }
         this.combinaisons.forEach(element => {
             element.pourcentage = (element.pourcentage*100)/sum;
@@ -83,10 +83,10 @@ export default class CalculPourcentages{
         var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
         if( sum > 100){
-            this.combinaisons[1].pourcentage += 5;
+            this.combinaisons[1].pourcentage = 5;
         }
         else{
-            this.combinaisons[1].pourcentage += 100 - sum;
+            this.combinaisons[1].pourcentage = 100 - sum;
         }
         this.combinaisons.forEach(element => {
             element.pourcentage = (element.pourcentage*100)/sum;
@@ -103,10 +103,10 @@ export default class CalculPourcentages{
         var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
         if( sum > 100){
-            this.combinaisons[1].pourcentage += 5;
+            this.combinaisons[1].pourcentage = 5;
         }
         else{
-            this.combinaisons[1].pourcentage += 100 - sum;
+            this.combinaisons[1].pourcentage = 100 - sum;
         }
         this.combinaisons.forEach(element => {
             element.pourcentage = (element.pourcentage*100)/sum;
