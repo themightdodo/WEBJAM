@@ -12,9 +12,9 @@ export default class GameManager{
         this.Affiches = AfficheAssets;
         
         this.type = {
-            vert,
-            rouge,
-            bleu,
+            vert : "Vert",
+            rouge : "Rouge",
+            bleu : "Bleu",
         }
     }
 }
