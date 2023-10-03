@@ -6,8 +6,7 @@ export default class scene1{
         this.scene1 = this.gameManager.scene1;
         this.calcul = this.gameManager.CalculPourcentages;
         this.Affiches = this.gameManager.Affiches;
-        this.Scene1 = this.gameManager.scene1;
-        this.test = this.Scene1.querySelector('#test');
+        this.test = this.scene1.querySelector('#test');
     }
 
     instanciate(id){
