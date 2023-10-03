@@ -81,6 +81,10 @@ export default class CalculPourcentages{
 
     initCombinaison(){
         this.combinaisons[1].pourcentage = 100;
+        this.combinaisons[2].pourcentage = 0;
+        this.combinaisons[3].pourcentage = 0;
+        this.combinaisons[4].pourcentage = 0;
+        this.combinaisons[5].pourcentage = 0;
         this.gameManager.scene1.style.display = 'none';
         this.gameManager.scene2.style.display = 'block'
     }

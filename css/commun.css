@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.visible{
+    height:100vh;
+    width:100%;
+    background-color:aquamarine;
+}
+
+.menu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bureau{
+    background-color: black;
+    background-image: url(../Assets/test.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width:100%;
+    height:100%;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hidden{
+    display:none;
+}
+
+.restart{
+    color:red;
+}
+
+/*  A SUPPRIMER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.scene2{
+    display:flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
