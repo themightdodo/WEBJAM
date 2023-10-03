@@ -1,6 +1,7 @@
-
+import GameManager from "./GameManager";
 class BarreDeVie{
     constructor(){
+    this.gameManager = new GameManager();
     this.pv = 12;
     this.poison = false;
     this.degatsPoison = 0;
@@ -8,6 +9,9 @@ class BarreDeVie{
     }
 
     calculBarreDeVie(){
+        if(pv <= 0){
+            this.gameManager.mort = true;
+        }
         if(this.type == "Rouge"){
             this.poison = true;
             this.degatsPoison += 2;

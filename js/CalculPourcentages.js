@@ -11,26 +11,30 @@ export default class CalculPourcentages{
         this.jaugeVert = 0;
         this.combo = false;
         this.comboBuffer = [];
-
+        this.suite = 
+        [["Rouge","Rouge","Rouge","Rouge"],
+        ["Vert","Vert","Vert"],
+        ["Rouge","Rouge","Rouge"],
+        ["Bleu","Bleu","Bleu"],];
         this.combos = {
             1 : 
             {
-                suite : ["Rouge","Rouge","Rouge","Rouge"],
+                pourcentages : [25,30,15,5,25],
                 combinaison : 5,
             },   
             2 :
             {   
-                suite : ["vert","vert","vert"],
+                pourcentages : [25,30,15,5,25],
                 combinaison : 5,
             },
             3 : 
             {
-                suite : ["Rouge","Rouge","Rouge"],
+                pourcentages : [10,30,20,10,30],
                 combinaison : 2,
             },  
             4 : 
             {
-                suite : ["Bleu","Bleu","Bleu"],
+                pourcentages : [55,10,10,5,20],
                 combinaison : 2,
             } 
             
@@ -63,18 +67,49 @@ export default class CalculPourcentages{
     }
 
     Add_to_buffer(type){
-        this.comboBuffer.push(type);
+        this.comboBuffer.unshift(type);
+        console.log(this.comboBuffer);
+        
     }
 
     CheckBuffer(){
-        for (let i = 1; i <= 4; i++) {
-            this.comboBuffer.forEach(element => {
-                if(this.combos[i] === element){
-                    this.combo = true;
-                    return this.combinaisons[this.combos[i].combinaison];
-                }
-            });
+        if(this.comboBuffer[0] === this.suite[0][0]&&this.comboBuffer[1] === this.suite[0][1]&&
+            this.comboBuffer[2] === this.suite[0][2]&&this.comboBuffer[3] === this.suite[0][3]){
+            this.combo = true;
+            this.setPourcentages(this.combos[1].pourcentages[0],this.combos[1].pourcentages[1],
+                this.combos[1].pourcentages[2],this.combos[1].pourcentages[3],this.combos[1].pourcentages[4]);
+            this.comboBuffer = [];
+            console.log("combo1");
+            this.gameManager.mort = true;
+            return this.combinaisons[this.combos[1].combinaison].suite;
         }
+        if(this.comboBuffer[0] === this.suite[1][0]&&this.comboBuffer[1] === this.suite[1][1]&&
+            this.comboBuffer[2] === this.suite[1][2]){
+            this.combo = true;
+            this.setPourcentages(this.combos[2].pourcentages[0],this.combos[2].pourcentages[2],
+                this.combos[2].pourcentages[2],this.combos[2].pourcentages[3],this.combos[2].pourcentages[4]);
+            console.log("combo2");
+            this.comboBuffer = [];
+            return this.combinaisons[this.combos[2].combinaison].suite;
+        }
+        if(this.comboBuffer[0] === this.suite[2][0]&&this.comboBuffer[1] === this.suite[2][1]&&
+            this.comboBuffer[2] === this.suite[2][2]){
+            this.combo = true;
+            this.setPourcentages(this.combos[3].pourcentages[0],this.combos[3].pourcentages[3],
+                this.combos[3].pourcentages[3],this.combos[3].pourcentages[3],this.combos[3].pourcentages[4]);
+            console.log("combo3");
+            return this.combinaisons[this.combos[3].combinaison].suite;
+        }
+        if(this.comboBuffer[0] === this.suite[3][0]&&this.comboBuffer[1] === this.suite[3][1]&&
+            this.comboBuffer[2] === this.suite[3][2]){
+            this.combo = true;
+            this.setPourcentages(this.combos[4].pourcentages[0],this.combos[4].pourcentages[4],
+                this.combos[4].pourcentages[4],this.combos[4].pourcentages[3],this.combos[4].pourcentages[4]);
+            console.log("combo4");
+            this.comboBuffer = [];
+            return this.combinaisons[this.combos[4].combinaison].suite;
+        }
+
         this.combo = false;
         return null;
     }
@@ -99,6 +134,16 @@ export default class CalculPourcentages{
         this.jaugeBleu += 1;
     }
 
+    setPourcentages(nb1,nb2,nb3,nb4,nb5){
+        this.combinaisons[1].pourcentage = nb1;
+        this.combinaisons[2].pourcentage = nb2;
+        this.combinaisons[3].pourcentage = nb3;
+        this.combinaisons[4].pourcentage = nb4;
+        this.combinaisons[5].pourcentage = nb5;
+        for (let i = 1; i <= 5; i++) {
+            console.log("Combo" + this.combinaisons[i].pourcentage);
+        }
+    };
 
     Calcul_Vert(){
         this.combinaisons[2].pourcentage += 20;

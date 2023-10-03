@@ -26,11 +26,13 @@ export default class scene1 {
     }
 
     setupScene(tour) {
-        this.calcul.CheckBuffer();
-        console.log('combo : ' + this.calcul.combo);
+        var combinaison = this.calcul.CheckBuffer();
+        if(this.calcul.combo){
+            console.log(combinaison);
+        }
         if(!this.calcul.combo){
             console.log("MARFCHE");
-            var combinaison = this.calcul.Get_combinaisons();
+            combinaison = this.calcul.Get_combinaisons();
         }
         if (tour > 1) {
             combinaison.forEach(combi_elem => {

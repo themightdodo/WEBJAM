@@ -52,6 +52,9 @@ export default class changementScene{
         this.initScene1();
     }
     Scene1Scene2(){
+        if(this.gameManager.mort){
+            console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
+        }
         this.scene1.style.display = 'none';
         this.scene2.style.display = 'block';
     }

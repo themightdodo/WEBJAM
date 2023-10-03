@@ -17,6 +17,7 @@ export default class GameManager{
         this.objets = this.scene1.querySelector('.objets');
         this.CalculPourcentages = new CalculPourcentages();
         this.scene1_ = new Scene1();
+        this.mort = false;
         
         this.changementScene = new changementScene();
         
