@@ -10,12 +10,13 @@ export default class GameManager{
             return GameManager.instance
         }
         GameManager.instance = this;
+        this.Affiches = AfficheAssets;
         this.menu = document.getElementById('menu');
         this.scene1 = document.getElementById('scene1');
         this.scene2 = document.getElementById('scene2');
         this.CalculPourcentages = new CalculPourcentages();
         this.scene1_ = new Scene1();
-        this.Affiches = AfficheAssets;
+       
         
         this.changementScene = new changementScene();
         
