@@ -111,18 +111,16 @@ export default class CalculPourcentages{
     }
 
     Get_combinaisons(){
-        var randomInt = 0;
+        var randomInt = Math.random() * 100;
         var interval0 = 0;
-        var interval1 = 20;
+        var interval1 = this.combinaisons[1].pourcentage;
         var interval2 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage;
         var interval3 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage;
         var interval4 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage;
         var interval5 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
-        if(interval0 <= randomInt <= interval1){
-            
+        if(interval0 <= randomInt < interval1){
             return this.combinaisons[1].suite;
-            
         }
         if(interval1 <= randomInt < interval2){
             return this.combinaisons[2].suite;
