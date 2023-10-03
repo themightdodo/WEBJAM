@@ -16,7 +16,6 @@ export default class GameManager{
         this.scene2 = document.getElementById('scene2');
         this.CalculPourcentages = new CalculPourcentages();
         this.scene1_ = new Scene1();
-       
         
         this.changementScene = new changementScene();
         
@@ -26,5 +25,19 @@ export default class GameManager{
             rouge : "Rouge",
             bleu : "Bleu",
         }
+    }
+    onClickAffiche(type){
+        if(type == this.type.rouge){
+            this.CalculPourcentages.Calcul_Rouge();
+        }
+        if(type == this.type.vert){
+            console.log("vert");
+            this.CalculPourcentages.Calcul_Vert();
+        }
+        if(type == this.type.bleu){
+            this.CalculPourcentages.Calcul_Bleu();
+        }
+
+        this.changementScene.Scene1Scene2();
     }
 }

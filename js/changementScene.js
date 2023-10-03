@@ -24,6 +24,7 @@ export default class changementScene{
         this.button1 = this.menu.querySelector('button');
         this.button2 = this.scene1.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
+        this.tour = 0;
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
         this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
@@ -36,7 +37,9 @@ export default class changementScene{
         this.scene2.style.display = 'none';
     }
     initScene1(){
-        this.Scene1.setupScene();
+        this.tour += 1;
+        console.log(this.tour);
+        this.Scene1.setupScene(this.tour);
     }
     menuScene1(){
         this.menu.style.display = 'none';
