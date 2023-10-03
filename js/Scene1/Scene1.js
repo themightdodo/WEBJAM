@@ -36,7 +36,6 @@ export default class scene1 {
                 });
             });
         } else {
-            console.log("taa");
             this.test.addEventListener('click', function () {
                 this.calcul.initCombinaison();
             }.bind(this));

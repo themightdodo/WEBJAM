@@ -39,6 +39,7 @@ export default class changementScene{
     initScene1(){
         this.tour += 1;
         console.log(this.tour);
+        //clean div
         this.Scene1.setupScene(this.tour);
     }
     menuScene1(){

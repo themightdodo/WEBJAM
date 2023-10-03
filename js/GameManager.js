@@ -28,14 +28,27 @@ export default class GameManager{
     }
     onClickAffiche(type){
         if(type == this.type.rouge){
-            this.CalculPourcentages.Calcul_Rouge();
+            this.CalculPourcentages.Add_Rouge();
+            if(this.CalculPourcentages.CheckBuffer()){
+                
+            } 
+            else{this.CalculPourcentages.Calcul_Rouge();}
+            
         }
         if(type == this.type.vert){
-            console.log("vert");
-            this.CalculPourcentages.Calcul_Vert();
+            this.CalculPourcentages.Add_Vert();
+            if(this.CalculPourcentages.CheckBuffer()){
+
+            } 
+            else{this.CalculPourcentages.Calcul_Vert();}
         }
         if(type == this.type.bleu){
-            this.CalculPourcentages.Calcul_Bleu();
+            this.CalculPourcentages.Add_Bleu();
+            if(this.CalculPourcentages.CheckBuffer()){
+
+            } 
+            else{this.CalculPourcentages.Calcul_Bleu();
+            }
         }
 
         this.changementScene.Scene1Scene2();

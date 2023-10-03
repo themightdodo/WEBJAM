@@ -41,10 +41,18 @@ export default class CalculPourcentages{
         console.log(this.combinaisons[1].pourcentage);
     }
 
+    Add_Vert(){
+        this.jaugeVert += 1;
+    }
+    Add_Rouge(){
+        this.jaugeRouge += 1;
+    }    
+    Add_Bleu(){
+        this.jaugeBleu += 1;
+    }
+
 
     Calcul_Vert(){
-        this.jaugeVert += 1;
-
         this.combinaisons[2].pourcentage += 20;
         this.combinaisons[3].pourcentage += 10;
         this.combinaisons[4].pourcentage += 5;
@@ -77,47 +85,65 @@ export default class CalculPourcentages{
     }
 
     Calcul_Rouge(){
-        this.jaugeRouge += 1;
-
-        this.combinaisons[2].pourcentage += 30;
-        this.combinaisons[3].pourcentage += 15;
-        this.combinaisons[4].pourcentage += 5;
-        this.combinaisons[5].pourcentage += 10;
-        
-        var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
-
-        if( sum > 100){
-            this.combinaisons[1].pourcentage = 5;
-        }
-        else{
-            this.combinaisons[1].pourcentage = 100 - sum;
-        }
-        this.combinaisons.forEach(element => {
-            element.pourcentage = (element.pourcentage*100)/sum;
-            console.log(element.pourcentage);
-        });
-    }
-
-    Calcul_Bleu(){
-        this.jaugeBleu += 1;
-
         this.combinaisons[2].pourcentage += 20;
-        this.combinaisons[3].pourcentage += 20;
+        this.combinaisons[3].pourcentage += 10;
         this.combinaisons[4].pourcentage += 5;
         this.combinaisons[5].pourcentage += 5;
         
         var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
-        if( sum > 100){
+        if( sum >= 100){
             this.combinaisons[1].pourcentage = 5;
         }
-        else{
+        if( sum < 100){
             this.combinaisons[1].pourcentage = 100 - sum;
         }
-        this.combinaisons.forEach(element => {
-            element.pourcentage = (element.pourcentage*100)/sum;
-            console.log(element.pourcentage);
-        });
+
+        var sumTotal = sum + this.combinaisons[1].pourcentage;
+        if(sumTotal > 100){
+            for (let i = 1; i <= 5; i++) {
+                this.combinaisons[i].pourcentage = (this.combinaisons[i].pourcentage*100)/sum;
+                console.log(this.combinaisons[i].pourcentage);
+            }
+        }
+        if (sumTotal < 100){
+            console.log('alerte, changez dans combinaisons');
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            console.log(this.combinaisons[i].pourcentage);
+        }
+    }
+
+    Calcul_Bleu(){
+        this.combinaisons[2].pourcentage += 20;
+        this.combinaisons[3].pourcentage += 10;
+        this.combinaisons[4].pourcentage += 5;
+        this.combinaisons[5].pourcentage += 5;
+        
+        var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
+
+        if( sum >= 100){
+            this.combinaisons[1].pourcentage = 5;
+        }
+        if( sum < 100){
+            this.combinaisons[1].pourcentage = 100 - sum;
+        }
+
+        var sumTotal = sum + this.combinaisons[1].pourcentage;
+        if(sumTotal > 100){
+            for (let i = 1; i <= 5; i++) {
+                this.combinaisons[i].pourcentage = (this.combinaisons[i].pourcentage*100)/sum;
+                console.log(this.combinaisons[i].pourcentage);
+            }
+        }
+        if (sumTotal < 100){
+            console.log('alerte, changez dans combinaisons');
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            console.log(this.combinaisons[i].pourcentage);
+        }
     }
 
     Get_combinaisons(){
