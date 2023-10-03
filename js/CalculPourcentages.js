@@ -36,6 +36,10 @@ export default class CalculPourcentages{
         }
 
     }
+    initCombinaison(){
+        this.combinaisons[1].pourcentage = 100;
+        console.log(this.combinaisons[1].pourcentage);
+    }
 
     Add_bleu(){
         this.jaugeBleu += 1;
