@@ -1,6 +1,6 @@
 export default class GameManager{
     static instance
-    constructor(canvas){
+    constructor(){
         if(GameManager.instance){
             return GameManager.instance
         }
