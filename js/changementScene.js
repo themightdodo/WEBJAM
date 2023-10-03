@@ -39,9 +39,11 @@ export default class changementScene{
     initScene1(){
         this.tour += 1;
         console.log(this.tour);
-        this.gameManager.objets.querySelectorAll('*').forEach(element => {
-            element.remove();
-        });
+        if(this.tour > 1){
+            this.gameManager.objets.querySelectorAll('*').forEach(element => {
+                element.remove();
+            }); 
+        }
         this.Scene1.setupScene(this.tour);
     }
     menuScene1(){

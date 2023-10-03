@@ -4,6 +4,7 @@ export default class CalculPourcentages{
 
     constructor(){
         this.gameManager = new GameManager(); 
+        this.changementScene = this.gameManager.previousChangementScene;
         this.type = this.gameManager.type;
         this.jaugeBleu = 0;
         this.jaugeRouge = 0;
@@ -80,7 +81,8 @@ export default class CalculPourcentages{
 
     initCombinaison(){
         this.combinaisons[1].pourcentage = 100;
-        console.log(this.combinaisons[1].pourcentage);
+        this.gameManager.scene1.style.display = 'none';
+        this.gameManager.scene2.style.display = 'block'
     }
 
     Add_Vert(){
