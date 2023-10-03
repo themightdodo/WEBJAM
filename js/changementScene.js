@@ -31,9 +31,13 @@ class changementScene{
         this.scene1.style.display = 'none';
         this.scene2.style.display = 'none';
     }
+    initScene1(){
+        
+    }
     menuScene1(){
         this.menu.style.display = 'none';
         this.scene1.style.display = 'block'
+        this.initScene1();
     }
     Scene1Scene2(){
         this.scene1.style.display = 'none';
@@ -41,8 +45,10 @@ class changementScene{
     }
     Scene2Scene1(){
         this.scene2.style.display = 'none';
-        this.scene1.style.display = 'block'
+        this.scene1.style.display = 'block';
+        this.initScene1();
     }
+
 }
 
 let test = new changementScene();
