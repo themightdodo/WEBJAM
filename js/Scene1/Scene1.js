@@ -10,5 +10,6 @@ export default class scene1{
 
     setupScene(){
         var combinaison = this.calcul.Get_combinaisons();
+        console.log(combinaison);
     }
 }
