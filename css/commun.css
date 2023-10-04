@@ -72,6 +72,8 @@ button{
     font-size:1.2em;
     background-color: rgba(0,0,0,0.5);
     padding: 1% 10%;
+    height: fit-content;
+    width: fit-content;
 }
 
 
@@ -105,6 +107,8 @@ button{
 .firstAffiche{
     display: flex;
     gap:32px;
+    align-items: center;
+    justify-content: center;
 }
 .context{
     display: flex;
