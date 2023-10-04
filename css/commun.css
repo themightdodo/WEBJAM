@@ -39,6 +39,7 @@ button{
     font-family: 'Pixelify Sans', cursive;
     font-weight: bold;
     font-size: 32px;
+    cursor: pointer;
 }
 
 .relative{
