@@ -24,6 +24,8 @@ export default class changementScene{
         this.button1 = this.menu.querySelector('button');
         // this.button2 = this.scene1.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
+        this.restart = this.scene2.querySelector("#mort");
+        this.baseAffiche = document.querySelector("#test");
         this.tour = 0;
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
@@ -51,7 +53,14 @@ export default class changementScene{
         window.requestAnimationFrame(() => this.update());
 
     }
+    Reload(){
+        
+    }
     init(){
+        this.tour = 0;
+        this.gameManager.barreDeVie.pv = this.gameManager.barreDeVie.maxPV;
+        this.gameManager.barreDeVie.poison = false;
+        this.gameManager.barreDeVie.degatsPoison = 0;
         this.menu.style.display = 'flex';
         this.scene1.style.display = 'none';
         this.scene2.style.display = 'none';
@@ -59,10 +68,11 @@ export default class changementScene{
     initScene1(){
         this.tour += 1;
         console.log(this.tour);
-        if(this.tour > 1){
-            this.gameManager.objets.querySelectorAll('*').forEach(element => {
-                element.remove();
-            }); 
+        this.gameManager.objets.querySelectorAll('*').forEach(element => {
+            element.remove();
+        }); 
+        if(this.tour === 1){
+            this.gameManager.objets.append(this.baseAffiche);
         }
         this.Scene1.setupScene(this.tour);
     }
@@ -108,6 +118,10 @@ export default class changementScene{
         
         if(this.gameManager.barreDeVie.pv <= 0){
             this.scene2.querySelector(".fond").style.backgroundImage = "url('../Assets/Affiches/chill.png')";
+            this.restart.style.display = "block";
+            this.restart.addEventListener("click", function(){
+                location.reload();
+            }.bind(this))
             setTimeout(function() {
                 this.scene1.style.display = 'none';
                 this.scene2.style.display = 'block';
