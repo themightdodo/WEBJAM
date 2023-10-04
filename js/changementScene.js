@@ -111,11 +111,11 @@ export default class changementScene{
         }
         if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - (this.gameManager.barreDeVie.maxPV/3)){
 
-           this.scene2BG = "url('./Assets/Affiches/Decor-2.gif')";
+           this.scene2BG = "url('./Assets/Affiches/Decor-1.gif')";
         }
         else if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - ((this.gameManager.barreDeVie.maxPV/3)*2)){
 
-            this.scene2BG = "url('./Assets/Affiches/Decor-4.gif')";
+            this.scene2BG = "url('./Assets/Affiches/Decor-2.gif')";
         }
         else{
             this.scene2BG = "url('./Assets/Affiches/Decor-4.gif')";
