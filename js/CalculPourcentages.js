@@ -43,19 +43,19 @@ export default class CalculPourcentages {
                 pourcentage: 0,
             },
             2: {
-                suite: ["Fascho1", "Fascho1", "Mid1"],
+                suite: ["Fascho2", "Fascho3", "Mid2"],
                 pourcentage: 0,
             },
             3: {
-                suite: ["Mid1", "Mid1", "Ecolo1"],
+                suite: ["Mid2", "Mid3", "Ecolo2"],
                 pourcentage: 0,
             },
             4: {
-                suite: ["Ecolo1", "Ecolo1", "Mid1"],
+                suite: ["Ecolo2", "Ecolo1", "Mid1"],
                 pourcentage: 0,
             },
             5: {
-                suite: ["Fascho1", "Fascho1", "Fascho1"],
+                suite: ["Fascho1", "Fascho2", "Fascho3"],
                 pourcentage: 0,
             }
 

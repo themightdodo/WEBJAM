@@ -19,5 +19,41 @@ export default[
         declinaison1:"./Assets/Affiches/vert.png",
         declinaison2:"./Assets/Affiches/5827_breadstare (1).png",
         declinaison3:"./Assets/Affiches/5827_breadstare (1).png",
-    }
+    },
+    {
+        name:"Mid2",
+        type:"Bleu",
+        declinaison1:"./Assets/Affiches/bleu.png",
+        declinaison2:"./Assets/Affiches/5827_breadstare (1).png",
+        declinaison3:"./Assets/Affiches/5827_breadstare (1).png",
+    },
+    {
+        name:"Fascho2",
+        type:"Rouge",
+        declinaison1:"./Assets/Affiches/rouge.png",
+        declinaison2:"./Assets/Affiches/5827_breadstare (1).png",
+        declinaison3:"./Assets/Affiches/5827_breadstare (1).png",
+    },
+    {
+        name:"Ecolo2",
+        type:"Vert",
+        declinaison1:"./Assets/Affiches/vert.png",
+        declinaison2:"./Assets/Affiches/5827_breadstare (1).png",
+        declinaison3:"./Assets/Affiches/5827_breadstare (1).png",
+    },
+    {
+        name:"Mid3",
+        type:"Bleu",
+        declinaison1:"./Assets/Affiches/bleu.png",
+        declinaison2:"./Assets/Affiches/5827_breadstare (1).png",
+        declinaison3:"./Assets/Affiches/5827_breadstare (1).png",
+    },
+    {
+        name:"Fascho3",
+        type:"Rouge",
+        declinaison1:"./Assets/Affiches/rouge.png",
+        declinaison2:"./Assets/Affiches/5827_breadstare (1).png",
+        declinaison3:"./Assets/Affiches/5827_breadstare (1).png",
+    },
+
 ]

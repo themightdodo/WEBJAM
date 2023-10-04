@@ -10,19 +10,31 @@ export default class scene1 {
         this.first = true;
     }
 
-    instanciate(element) {
+    instanciate(element,tour) {
         console.log(element);
         var affiche = document.createElement("div");
         affiche.id = element.name;
         var img = document.createElement("img");
         var type = "";
-        img.src = element.declinaison1;
         type = element.type;
+        this.declinaison(tour,element,img);
         this.gameManager.objets.append(affiche);
         affiche.append(img);
         affiche.addEventListener("click", function () {
             this.gameManager.onClickAffiche(element.type)
         }.bind(this));
+    }
+
+    declinaison(tour,element,img){
+        if(tour >= 4){
+                img.src = element.declinaison2;
+        }
+        else if(tour >= 6){
+            img.src = element.declinaison3;
+        }
+        else{
+            img.src = element.declinaison1;
+        }
     }
 
     setupScene(tour) {
@@ -38,7 +50,7 @@ export default class scene1 {
             combinaison.forEach(combi_elem => {
                 this.Affiches.forEach(element => {
                     if (combi_elem === element.name) {
-                        this.instanciate(element);
+                        this.instanciate(element,tour);
                     }
                 });
             });
