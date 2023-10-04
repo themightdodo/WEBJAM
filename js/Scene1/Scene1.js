@@ -11,10 +11,8 @@ export default class scene1 {
     }
 
     instanciate(element,tour) {
-        console.log(element);
         var affiche = document.createElement("div");
         
-       
         var img = document.createElement("img");
         img.id = element.name;
         var type = "";
@@ -96,11 +94,7 @@ export default class scene1 {
     setupScene(tour) {
         this.gameManager.tampon.tamponed = false;
         var combinaison = this.calcul.CheckBuffer();
-        if(this.calcul.combo){
-            console.log(combinaison);
-        }
         if(!this.calcul.combo){
-            console.log("MARFCHE");
             combinaison = this.calcul.Get_combinaisons();
         }
         if (tour > 1) {

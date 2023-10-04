@@ -107,7 +107,6 @@ export default class GameManager{
         }
         
         this.barreDeVie.calculBarreDeVie(type);
-        console.log(this.barreDeVie.pv);
         this.CalculPourcentages.Add_to_buffer(type);
         if(type == this.type.rouge){
             this.CalculPourcentages.Add_Rouge();
