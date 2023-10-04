@@ -29,6 +29,7 @@ export default class changementScene{
         this.button1.addEventListener('click', this.menuScene1.bind(this));
         // this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
         this.button3.addEventListener('click', this.Scene2Scene1.bind(this));
+        this.changescene = false;
         this.init();
     }
     init(){
@@ -52,16 +53,25 @@ export default class changementScene{
         this.initScene1();
     }
     Scene1Scene2(){
+        if(this.changescene){
+            return;
+        }
         if(this.tour >= 8){
             console.log("fin");
         }
         if(this.gameManager.mort){
             console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
         }
-        this.scene1.style.display = 'none';
-        this.scene2.style.display = 'block';
+
+        setTimeout(function() {
+            this.scene1.style.display = 'none';
+            this.scene2.style.display = 'block';
+        },3000);
+        this.changescene = true;
+      
     }
     Scene2Scene1(){
+        this.changescene = false;
         this.scene2.style.display = 'none';
         this.scene1.style.display = 'block';
         this.initScene1();

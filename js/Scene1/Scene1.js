@@ -13,16 +13,19 @@ export default class scene1 {
     instanciate(element,tour) {
         console.log(element);
         var affiche = document.createElement("div");
-        affiche.id = element.name;
+        
+       
         var img = document.createElement("img");
+        img.id = element.name;
         var type = "";
         type = element.type;
         this.declinaison(tour,element,img);
-        this.gameManager.objets.append(affiche);
-        affiche.append(img);
-        affiche.addEventListener("click", function () {
-            this.gameManager.onClickAffiche(element.type)
-        }.bind(this));
+        this.gameManager.objets.append(img);
+        img.style.width = "33%";
+        img.style.height = "fit-content";
+        img.addEventListener("click", (e) => {
+            this.gameManager.onClickAffiche(element.type,e)
+        });
     }
 
     declinaison(tour,element,img){
@@ -38,6 +41,7 @@ export default class scene1 {
     }
 
     setupScene(tour) {
+        this.gameManager.tampon.tamponed = false;
         var combinaison = this.calcul.CheckBuffer();
         if(this.calcul.combo){
             console.log(combinaison);
