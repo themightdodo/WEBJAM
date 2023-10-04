@@ -2,7 +2,8 @@ import GameManager from "./GameManager.js";
 export default class barreDeVie{
     constructor(){
     this.gameManager = new GameManager();
-    this.pv = 12;
+    this.maxPV = 12;
+    this.pv = this.maxPV;
     this.poison = false;
     this.degatsPoison = 0;
 

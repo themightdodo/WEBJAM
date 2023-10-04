@@ -11,7 +11,7 @@ export default[
         type:"Rouge",
         declinaison1:"./Assets/Affiches/rouge2-V1.jpeg",
         declinaison2:"./Assets/Affiches/rouge2-V2.jpeg",
-        declinaison3:"./Assets/Affiches/rouge2-V2.jpeg",
+        declinaison3:"./Assets/Affiches/rouge2-V3.jpeg",
     },
     {
         name:"Ecolo1",
@@ -31,8 +31,8 @@ export default[
         name:"Fascho2",
         type:"Rouge",
         declinaison1:"./Assets/Affiches/rouge3-V1.jpeg",
-        declinaison2:"./Assets/Affiches/rouge3-V1.jpeg",
-        declinaison3:"./Assets/Affiches/rouge3-V1.jpeg",
+        declinaison2:"./Assets/Affiches/rouge3-V2.jpeg",
+        declinaison3:"./Assets/Affiches/rouge3-V3.jpeg",
     },
     {
         name:"Ecolo2",
@@ -51,9 +51,9 @@ export default[
     {
         name:"Fascho3",
         type:"Rouge",
-        declinaison1:"./Assets/Affiches/rouge2-V1.jpeg",
-        declinaison2:"./Assets/Affiches/rouge2-V1.jpeg",
-        declinaison3:"./Assets/Affiches/rouge2-V1.jpeg",
+        declinaison1:"./Assets/Affiches/rouge1-V1.jpeg",
+        declinaison2:"./Assets/Affiches/rouge1-V2.jpeg",
+        declinaison3:"./Assets/Affiches/rouge1-V3.jpeg",
     },
 
 ]

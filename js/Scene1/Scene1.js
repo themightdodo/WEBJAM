@@ -21,11 +21,36 @@ export default class scene1 {
         type = element.type;
         this.declinaison(tour,element,img);
         this.gameManager.objets.append(img);
-        img.style.width = "33%";
+        img.style.width = "50%";
         img.style.height = "fit-content";
         img.addEventListener("click", (e) => {
-            this.gameManager.onClickAffiche(element.type,e)
+            this.gameManager.onClickAffiche(element.type,e);
+            setTimeout(() => {
+                this.scene1.animate(
+                    [
+                        {transform : "translateX(-10px)"},
+                        {transform : "translateX(10px)"},
+                        {transform : "translateX(-5px)"},
+                        {transform : "translateX(5px)"},
+                        {transform : "translateX(0px)"},
+                    ],
+                    {
+                        duration : 400,
+                        easing: "ease-out",
+                    },
+                )
+            }, 300);
         });
+        img.animate(
+            [
+                {transform : "translateY(-400px)"},
+                {transform : "translateY(0px)"},
+            ],
+            {
+                duration:600,
+                easing:"ease-out",
+            }
+        )
     }
 
     declinaison(tour,element,img){
@@ -51,6 +76,7 @@ export default class scene1 {
             combinaison = this.calcul.Get_combinaisons();
         }
         if (tour > 1) {
+            
             combinaison.forEach(combi_elem => {
                 this.Affiches.forEach(element => {
                     if (combi_elem === element.name) {

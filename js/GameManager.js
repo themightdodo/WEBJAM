@@ -33,7 +33,10 @@ export default class GameManager{
         }
     }
     onClickAffiche(type,event){
-        this.tampon.tampon(event);
+        if(this.tampon.tamponed){
+            return;
+        }
+        
         this.barreDeVie.calculBarreDeVie(type);
         console.log(this.barreDeVie.pv);
         this.CalculPourcentages.Add_to_buffer(type);
@@ -55,7 +58,7 @@ export default class GameManager{
                 this.CalculPourcentages.Calcul_Bleu();
             }
         }
-
+        this.tampon.tampon(event);
         this.changementScene.Scene1Scene2();
     }
 }

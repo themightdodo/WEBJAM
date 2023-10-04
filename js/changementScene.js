@@ -30,7 +30,26 @@ export default class changementScene{
         // this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
         this.button3.addEventListener('click', this.Scene2Scene1.bind(this));
         this.changescene = false;
+        this.initfirst = false;
+        this.scene2BG == null;
         this.init();
+        this.update();
+    }
+    update(){
+        console.log(this.tour);
+        if(this.tour === 1&&this.initfirst === false&&this.scene2.style.display === "block"){
+            console.log("oui");
+            var time3 = setTimeout(function(){
+                this.Scene2Scene1();
+                
+            }.bind(this),8000);
+            this.initfirst = true;
+        }
+        if(this.tour === 2){
+            this.scene2.querySelector(".fond").style.backgroundImage = "url(../Assets/Affiches/pain.png)";
+        }
+        window.requestAnimationFrame(() => this.update());
+
     }
     init(){
         this.menu.style.display = 'flex';
@@ -52,7 +71,17 @@ export default class changementScene{
         this.scene1.style.display = 'block';
         this.initScene1();
     }
+    Scene2Scene1(){
+        this.changescene = false;
+        this.scene2.style.display = 'none';
+        this.scene1.style.display = 'block';
+
+        this.initScene1();
+    }
     Scene1Scene2(){
+        if(this.scene2BG != null){
+            this.scene2.querySelector(".fond").style.backgroundImage = this.scene2BG;
+        }
         if(this.changescene){
             return;
         }
@@ -62,20 +91,42 @@ export default class changementScene{
         if(this.gameManager.mort){
             console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
         }
+        this.scene2.querySelector(".fond").style.backgroundSize = "cover";
+        this.scene2.querySelector(".fond").style.width= "100%";
+        this.scene2.querySelector(".fond").style.height = "100%";
+        if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - (this.gameManager.barreDeVie.maxPV/3)){
 
-        setTimeout(function() {
-            this.scene1.style.display = 'none';
-            this.scene2.style.display = 'block';
-        },3000);
+           this.scene2BG = "url('../Assets/Affiches/5827_breadstare (1).png')";
+        }
+        else if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - ((this.gameManager.barreDeVie.maxPV/3)*2)){
+
+            this.scene2BG = "url('../Assets/Affiches/cringe.jpg')";
+        }
+        else{
+            this.scene2BG = "url('../Assets/Affiches/hehe.jpg')";
+        }
+        
+        if(this.gameManager.barreDeVie.pv <= 0){
+            this.scene2.querySelector(".fond").style.backgroundImage = "url('../Assets/Affiches/chill.png')";
+            setTimeout(function() {
+                this.scene1.style.display = 'none';
+                this.scene2.style.display = 'block';
+            },3000);
+        }
+        else{
+            var time1 = setTimeout(function() {
+                this.scene1.style.display = 'none';
+                this.scene2.style.display = 'block';
+            },3000);
+            var time2 = setTimeout(function(){
+                this.Scene2Scene1();
+            }.bind(this),8000);
+        }
+
         this.changescene = true;
       
     }
-    Scene2Scene1(){
-        this.changescene = false;
-        this.scene2.style.display = 'none';
-        this.scene1.style.display = 'block';
-        this.initScene1();
-    }
+
 
 }
 
