@@ -44,7 +44,7 @@ export default class GameManager{
         let e = null;
         this.affichedebut.addEventListener("click", (e) => {
             
-            this.onClickAffiche(element,e);
+            this.tampon.tampon(e);
             setTimeout(() => {
                 this.scene1.animate(
                     [
