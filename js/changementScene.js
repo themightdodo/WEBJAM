@@ -22,14 +22,12 @@ export default class changementScene{
         this.scene1 = this.gameManager.scene1;
         this.scene2 = this.gameManager.scene2;
         this.button1 = this.menu.querySelector('button');
-        // this.button2 = this.scene1.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
         this.restart = this.scene2.querySelector("#mort");
         this.baseAffiche = document.querySelector("#test");
         this.tour = 0;
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
-        // this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
         this.button3.addEventListener('click', this.Scene2Scene1.bind(this));
         this.changescene = false;
         this.initfirst = false;
@@ -96,6 +94,10 @@ export default class changementScene{
             return;
         }
         if(this.tour >= 8){
+            this.restart.style.display = "block";
+            this.restart.addEventListener("click", function(){
+                location.reload();
+            }.bind(this))
             console.log("fin");
         }
         if(this.gameManager.mort){
@@ -106,7 +108,7 @@ export default class changementScene{
         this.scene2.querySelector(".fond").style.height = "100%";
         if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - (this.gameManager.barreDeVie.maxPV/3)){
 
-           this.scene2BG = "url('../Assets/Affiches/5827_breadstare (1).png')";
+            this.scene2BG = "url('../Assets/Affiches/5827_breadstare (1).png')";
         }
         else if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - ((this.gameManager.barreDeVie.maxPV/3)*2)){
 
@@ -132,15 +134,13 @@ export default class changementScene{
                 this.scene1.style.display = 'none';
                 this.scene2.style.display = 'block';
             },3000);
-            var time2 = setTimeout(function(){
-                this.Scene2Scene1();
-            }.bind(this),8000);
+            if(this.tour < 8){
+                var time2 = setTimeout(function(){
+                    this.Scene2Scene1();
+                }.bind(this),8000);
+            }
         }
-
         this.changescene = true;
-      
     }
-
-
 }
 

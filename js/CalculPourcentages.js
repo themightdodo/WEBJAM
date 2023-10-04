@@ -234,7 +234,6 @@ export default class CalculPourcentages {
 
     Get_combinaisons() {
         var randomInt = Math.random() * 100;
-        // var randomInt = 0;
         var interval0 = 0;
         var interval1 = this.combinaisons[1].pourcentage;
         var interval2 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage;
