@@ -25,7 +25,7 @@ export default class scene1{
     }
 
     setupScene(){
-        if(!this.first){
+
             var combinaison = this.calcul.Get_combinaisons();
             combinaison.forEach(combi_elem => {
                 this.Affiches.forEach(element => {
@@ -34,11 +34,11 @@ export default class scene1{
                     }
                 });
             });
-        }
 
-        this.test.addEventListener('click', function(){
-            this.calcul.initCombinaison();
-            this.first = false;
-        }.bind(this));
+
+        // this.test.addEventListener('click', function(){
+        //     this.calcul.initCombinaison();
+   
+        // }.bind(this));
     }
 }
