@@ -40,8 +40,10 @@ export default class GameManager{
         this.affichedebut.style.width = "50%";
         this.affichedebut.style.height = "fit-content";
         this.affichedebut.style.cursor = "pointer";
+        let element = null;
+        let e = null;
         this.affichedebut.addEventListener("click", (e) => {
-            this.onClickAffiche(element.type,e);
+            this.onClickAffiche(element,e);
             setTimeout(() => {
                 this.scene1.animate(
                     [

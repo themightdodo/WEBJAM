@@ -49,6 +49,12 @@ button{
     padding: 1% 5%;
     width: fit-content;
     margin: auto;
+    border-radius: 8px;
+    border: none;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 .relative{
@@ -87,7 +93,13 @@ button{
 }
 
 .restart{
-    color:red;
+    padding: 10% 20%;
+    border-radius: 8px;
+    border: none;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 
