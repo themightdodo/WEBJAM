@@ -27,18 +27,16 @@ export default class Tampon{
         main.style.left = (x-main.offsetWidth/2) + "px";
         
         setTimeout(() => {
-           main.remove(); 
-           var sceau = document.createElement("img");
-           sceau.style.position = "absolute";
-           sceau.style.width = "10%";
-           sceau.src = this.sceauUrl;
-           this.objets.append(sceau);
-           sceau.style.top = (y-sceau.offsetWidth/2) + "px";
-           sceau.style.left = (x-sceau.offsetWidth/2) + "px";
-
+            main.remove(); 
+            var sceau = document.createElement("img");
+            sceau.style.position = "absolute";
+            sceau.style.width = "10%";
+            sceau.src = this.sceauUrl;
+            this.objets.append(sceau);
+            sceau.style.top = (y-sceau.offsetWidth/2) + "px";
+            sceau.style.left = (x-sceau.offsetWidth/2) + "px";
         }, 750);
         this.tamponed = true;
         
-       
     }
 }

@@ -113,8 +113,11 @@ export default class CalculPourcentages {
         this.combinaisons[3].pourcentage = 0;
         this.combinaisons[4].pourcentage = 0;
         this.combinaisons[5].pourcentage = 0;
-        this.gameManager.scene1.style.display = 'none';
-        this.gameManager.scene2.style.display = 'block'
+        setTimeout(() => {
+            this.gameManager.scene1.style.display = 'none';
+            this.gameManager.scene2.style.display = 'block';
+        }, 1500);
+
     }
 
     Add_Vert() {
