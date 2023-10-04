@@ -66,13 +66,14 @@ export default class CalculPourcentages{
     }
 
     CheckBuffer(){
-        this.combos.forEach(combo => {
+        for (let i = 1; i <= 4; i++) {
             this.comboBuffer.forEach(element => {
-                if(combo === element){
-
+                if(combos[i] === element){
+                    return this.combinaisons[combos[i].combinaison];
                 }
             });
-        });
+        }
+        return null;
     }
 
     initCombinaison(){
