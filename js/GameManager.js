@@ -2,6 +2,7 @@ import AfficheAssets from "./AfficheData.js";
 import CalculPourcentages from "./CalculPourcentages.js";
 import changementScene from "./changementScene.js";
 import Scene1 from "./Scene1/Scene1.js";
+import barreDeVie from "./barreDeVie.js";
 
 export default class GameManager{
     static instance
@@ -11,6 +12,7 @@ export default class GameManager{
         }
         GameManager.instance = this;
         this.Affiches = AfficheAssets;
+        this.barreDeVie = new barreDeVie();
         this.menu = document.getElementById('menu');
         this.scene1 = document.getElementById('scene1');
         this.scene2 = document.getElementById('scene2');
@@ -29,7 +31,8 @@ export default class GameManager{
         }
     }
     onClickAffiche(type){
-
+        this.barreDeVie.calculBarreDeVie(type);
+        console.log(this.barreDeVie.pv);
         this.CalculPourcentages.Add_to_buffer(type);
         if(type == this.type.rouge){
             this.CalculPourcentages.Add_Rouge();

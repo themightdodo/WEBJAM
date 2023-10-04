@@ -52,6 +52,9 @@ export default class changementScene{
         this.initScene1();
     }
     Scene1Scene2(){
+        if(this.tour >= 8){
+            console.log("fin");
+        }
         if(this.gameManager.mort){
             console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
         }
