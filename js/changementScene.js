@@ -53,7 +53,7 @@ export default class changementScene{
             this.initfirst = true;
         }
         if(this.tour === 2){
-            this.scene2.querySelector(".fond").style.backgroundImage = "url(../Assets/Affiches/Decor-1.gif)";
+            this.scene2.querySelector(".fond").style.backgroundImage = "url(./Assets/Affiches/Decor-1.gif)";
         }
         window.requestAnimationFrame(() => this.update());
 
@@ -115,14 +115,14 @@ export default class changementScene{
         }
         else if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - ((this.gameManager.barreDeVie.maxPV/3)*2)){
 
-            this.scene2BG = "url('./Assets/Affiches/cringe.jpg')";
+            this.scene2BG = "url('./Assets/Affiches/Decor-4.gif')";
         }
         else{
-            this.scene2BG = "url('./Assets/Affiches/hehe.jpg')";
+            this.scene2BG = "url('./Assets/Affiches/Decor-4.gif')";
         }
         
         if(this.gameManager.barreDeVie.pv <= 0){
-            this.scene2.querySelector(".fond").style.backgroundImage = "url('../Assets/Affiches/chill.png')";
+            this.scene2.querySelector(".fond").style.backgroundImage = "url('./Assets/Affiches/Decor-4.gif')";
             this.restart.style.display = "block";
             this.restart.addEventListener("click", function(){
                 location.reload();

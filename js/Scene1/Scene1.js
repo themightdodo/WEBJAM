@@ -21,7 +21,7 @@ export default class scene1 {
         type = element.type;
         this.declinaison(tour,element,img);
         this.gameManager.objets.append(img);
-        img.style.width = "50%";
+        img.style.width = "33%";
         img.style.height = "fit-content";
         img.style.cursor = "pointer";
         img.addEventListener("click", (e) => {
