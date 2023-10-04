@@ -32,7 +32,7 @@ export default class GameManager{
             bleu : "Bleu",
         };
 
-        this.affichedebut = document.querySelector("#test");
+        this.affichedebut = document.querySelector("#affiche1");
         this.setAffiche1();
     }
 
