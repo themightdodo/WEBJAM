@@ -44,9 +44,9 @@ export default[
     {
         name:"Mid3",
         type:"Bleu",
-        declinaison1:"./Assets/Affiches/bleu2-V2.jpeg",
-        declinaison2:"./Assets/Affiches/bleu2-V2.jpeg",
-        declinaison3:"./Assets/Affiches/bleu2-V2.jpeg",
+        declinaison1:"./Assets/Affiches/bleu1-V1.jpeg",
+        declinaison2:"./Assets/Affiches/bleu1-V2.jpeg",
+        declinaison3:"./Assets/Affiches/bleu1-V3.jpeg",
     },
     {
         name:"Fascho3",
