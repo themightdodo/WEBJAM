@@ -22,7 +22,6 @@ export default class changementScene{
         this.scene1 = this.gameManager.scene1;
         this.scene2 = this.gameManager.scene2;
         this.button1 = this.menu.querySelector('button');
-        // this.button2 = this.scene1.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
         this.restart = this.scene2.querySelector("#mort");
         this.baseAffiche = document.querySelector("#test");
@@ -96,6 +95,10 @@ export default class changementScene{
             return;
         }
         if(this.tour >= 8){
+            this.restart.style.display = "block";
+            this.restart.addEventListener("click", function(){
+                location.reload();
+            }.bind(this))
             console.log("fin");
         }
         if(this.gameManager.mort){
@@ -129,15 +132,13 @@ export default class changementScene{
                 this.scene1.style.display = 'none';
                 this.scene2.style.display = 'block';
             },3000);
-            var time2 = setTimeout(function(){
-                this.Scene2Scene1();
-            }.bind(this),8000);
+            if(this.tour < 8){
+                var time2 = setTimeout(function(){
+                    this.Scene2Scene1();
+                }.bind(this),8000);
+            }
         }
-
         this.changescene = true;
-      
     }
-
-
 }
 
