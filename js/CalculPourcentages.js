@@ -202,9 +202,9 @@ export default class CalculPourcentages {
     }
 
     Calcul_Bleu() {
-        this.combinaisons[2].pourcentage += 20;
-        this.combinaisons[3].pourcentage += 20;
-        this.combinaisons[4].pourcentage += 5;
+        this.combinaisons[2].pourcentage += 10;
+        this.combinaisons[3].pourcentage += 15;
+        this.combinaisons[4].pourcentage += 10;
         this.combinaisons[5].pourcentage += 5;
 
         var sum = this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
