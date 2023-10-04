@@ -6,7 +6,7 @@ export default class scene1 {
         this.scene1 = this.gameManager.scene1;
         this.calcul = this.gameManager.CalculPourcentages;
         this.Affiches = this.gameManager.Affiches;
-        this.test = this.scene1.querySelector('#test');
+        this.affiche1 = this.scene1.querySelector('#affiche1');
         this.first = true;
     }
 
@@ -113,7 +113,7 @@ export default class scene1 {
                 });
             });
         } else {
-            this.test.addEventListener('click', function () {
+            this.affiche1.addEventListener('click', function () {
                 this.calcul.initCombinaison();
             }.bind(this));
         }
