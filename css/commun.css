@@ -29,6 +29,12 @@ body{
     justify-content: center;
     align-items: center;
 }
+.menuBureau{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
 h1{
     font-family: 'Pixelify Sans', cursive;
     font-weight: bold;
@@ -40,6 +46,9 @@ button{
     font-weight: bold;
     font-size: 32px;
     cursor: pointer;
+    padding: 1% 5%;
+    width: fit-content;
+    margin: auto;
 }
 
 .relative{
