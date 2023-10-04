@@ -9,7 +9,31 @@ export default class CalculPourcentages{
         this.jaugeRouge = 0;
         this.jaugeVert = 0;
 
+        this.comboBuffer = [];
 
+        this.combos = {
+            1 : 
+            {
+                suite : ["Rouge","Rouge","Rouge","Rouge"],
+                combinaison : 5,
+            },   
+            2 :
+            {   
+                suite : ["vert","vert","vert"],
+                combinaison : 5,
+            },
+            3 : 
+            {
+                suite : ["Rouge","Rouge","Rouge"],
+                combinaison : 2,
+            },  
+            4 : 
+            {
+                suite : ["Bleu","Bleu","Bleu"],
+                combinaison : 2,
+            } 
+            
+        }
 
         this.combinaisons = {
             1 : {
@@ -36,6 +60,22 @@ export default class CalculPourcentages{
         }
 
     }
+
+    Add_to_buffer(type){
+        this.comboBuffer.push(type);
+    }
+
+    CheckBuffer(){
+        for (let i = 1; i <= 4; i++) {
+            this.comboBuffer.forEach(element => {
+                if(combos[i] === element){
+                    return this.combinaisons[combos[i].combinaison];
+                }
+            });
+        }
+        return null;
+    }
+
     initCombinaison(){
         this.combinaisons[1].pourcentage = 100;
         console.log(this.combinaisons[1].pourcentage);
@@ -121,9 +161,10 @@ export default class CalculPourcentages{
     }
 
     Get_combinaisons(){
-        var randomInt = Math.random() * 100;
+        // var randomInt = Math.random() * 100;
+        var randomInt = 0;
         var interval0 = 0;
-        var interval1 = this.combinaisons[1].pourcentage;
+        var interval1 = 20;
         var interval2 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage;
         var interval3 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage;
         var interval4 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage;
