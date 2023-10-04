@@ -28,9 +28,6 @@ export default class changementScene{
         // this.baseAffiche2 = this.baseAffiche.querySelector(".context");
         // this.baseAffiche2text = this.baseAffiche2.querySelector('p');
         this.baseAffiche3 = this.baseAffiche.querySelector("#affiche1");
-        console.log(this.baseAffiche);
-        console.log(this.baseAffiche2);
-        console.log(this.baseAffiche3);
         this.tour = 0;
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
@@ -43,9 +40,7 @@ export default class changementScene{
         this.update();
     }
     update(){
-        console.log(this.tour);
         if(this.tour === 1&&this.initfirst === false&&this.scene2.style.display === "block"){
-            console.log("oui");
             var time3 = setTimeout(function(){
                 this.Scene2Scene1();
                 
@@ -72,7 +67,6 @@ export default class changementScene{
     }
     initScene1(){
         this.tour += 1;
-        console.log(this.tour);
         if(this.tour > 1){
             this.gameManager.objets.querySelectorAll('*').forEach(element => {
                 element.remove();
@@ -104,10 +98,8 @@ export default class changementScene{
             this.restart.addEventListener("click", function(){
                 location.reload();
             }.bind(this))
-            console.log("fin");
         }
         if(this.gameManager.mort){
-            console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
         }
         if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - (this.gameManager.barreDeVie.maxPV/3)){
 

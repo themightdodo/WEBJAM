@@ -65,7 +65,6 @@ export default class CalculPourcentages {
 
     Add_to_buffer(type) {
         this.comboBuffer.unshift(type);
-        console.log(this.comboBuffer);
 
     }
 
@@ -136,9 +135,6 @@ export default class CalculPourcentages {
         this.combinaisons[3].pourcentage = nb3;
         this.combinaisons[4].pourcentage = nb4;
         this.combinaisons[5].pourcentage = nb5;
-        for (let i = 1; i <= 5; i++) {
-            console.log("Combo" + this.combinaisons[i].pourcentage);
-        }
     };
 
     Calcul_Vert() {
@@ -161,15 +157,7 @@ export default class CalculPourcentages {
         if (sumTotal > 100) {
             for (let i = 1; i <= 5; i++) {
                 this.combinaisons[i].pourcentage = (this.combinaisons[i].pourcentage * 100) / sum;
-                console.log(this.combinaisons[i].pourcentage);
             }
-        }
-        if (sumTotal < 100) {
-            console.log('alerte, changez dans combinaisons');
-        }
-
-        for (let i = 1; i <= 5; i++) {
-            console.log(this.combinaisons[i].pourcentage);
         }
     }
 
@@ -192,15 +180,7 @@ export default class CalculPourcentages {
         if (sumTotal > 100) {
             for (let i = 1; i <= 5; i++) {
                 this.combinaisons[i].pourcentage = (this.combinaisons[i].pourcentage * 100) / sum;
-                console.log(this.combinaisons[i].pourcentage);
             }
-        }
-        if (sumTotal < 100) {
-            console.log('alerte, changez dans combinaisons');
-        }
-
-        for (let i = 1; i <= 5; i++) {
-            console.log(this.combinaisons[i].pourcentage);
         }
     }
 
@@ -223,15 +203,7 @@ export default class CalculPourcentages {
         if (sumTotal > 100) {
             for (let i = 1; i <= 5; i++) {
                 this.combinaisons[i].pourcentage = (this.combinaisons[i].pourcentage * 100) / sum;
-                console.log(this.combinaisons[i].pourcentage);
             }
-        }
-        if (sumTotal < 100) {
-            console.log('alerte, changez dans combinaisons');
-        }
-
-        for (let i = 1; i <= 5; i++) {
-            console.log(this.combinaisons[i].pourcentage);
         }
     }
 
@@ -244,26 +216,20 @@ export default class CalculPourcentages {
         var interval4 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage;
         var interval5 = this.combinaisons[1].pourcentage + this.combinaisons[2].pourcentage + this.combinaisons[3].pourcentage + this.combinaisons[4].pourcentage + this.combinaisons[5].pourcentage;
 
-        console.log('random' + randomInt);
 
         if (interval0 <= randomInt && randomInt < interval1) {
-            console.log('interval 1 ' + interval1);
             return this.combinaisons[1].suite;
         }
         if (interval1 <= randomInt && randomInt < interval2) {
-            console.log("interval 2");
             return this.combinaisons[2].suite;
         }
         if (interval2 <= randomInt && randomInt < interval3) {
-            console.log("interval 3");
             return this.combinaisons[3].suite;
         }
         if (interval3 <= randomInt && randomInt < interval4) {
-            console.log("interval 4");
             return this.combinaisons[4].suite;
         }
         if (interval4 <= randomInt && randomInt < interval5) {
-            console.log("interval 5");
             return this.combinaisons[5].suite;
         }
         if (randomInt == 100) {
