@@ -23,6 +23,7 @@ export default class scene1 {
         this.gameManager.objets.append(img);
         img.style.width = "50%";
         img.style.height = "fit-content";
+        img.style.cursor = "pointer";
         img.addEventListener("click", (e) => {
             this.gameManager.onClickAffiche(element.type,e);
             setTimeout(() => {
@@ -40,6 +41,33 @@ export default class scene1 {
                     },
                 )
             }, 300);
+        });
+        img.addEventListener("mouseover", function(){
+            img.animate(
+                [
+                    {transform:"translateY(0px)"},
+                    {transform:"translateY(-40px)"},
+                ],
+                {
+                    duration:400,
+                    easing:"ease-out",
+                }
+            )
+            img.style.transform = "translateY(-40px)";
+        });
+        img.addEventListener("mouseleave", function(){
+            img.animate(
+                [
+                    {transform:"translateY(-40px)"},
+                    {transform:"translateY(0px)"},
+                    
+                ],
+                {
+                    duration:400,
+                    easing:"ease-out",
+                }
+            )
+            img.style.transform = "translateY(0px)";
         });
         img.animate(
             [

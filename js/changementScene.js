@@ -30,7 +30,7 @@ export default class changementScene{
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
         // this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
-        this.button3.addEventListener('click', this.Scene2Scene1.bind(this));
+        // this.button3.addEventListener('click', this.Scene2Scene1.bind(this));
         this.changescene = false;
         this.initfirst = false;
         this.scene2BG == null;
@@ -44,11 +44,11 @@ export default class changementScene{
             var time3 = setTimeout(function(){
                 this.Scene2Scene1();
                 
-            }.bind(this),8000);
+            }.bind(this),8500);
             this.initfirst = true;
         }
         if(this.tour === 2){
-            this.scene2.querySelector(".fond").style.backgroundImage = "url(../Assets/Affiches/pain.png)";
+            this.scene2.querySelector(".fond").style.backgroundImage = "url(../Assets/Affiches/Decor-1.gif)";
         }
         window.requestAnimationFrame(() => this.update());
 
@@ -101,12 +101,9 @@ export default class changementScene{
         if(this.gameManager.mort){
             console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
         }
-        this.scene2.querySelector(".fond").style.backgroundSize = "cover";
-        this.scene2.querySelector(".fond").style.width= "100%";
-        this.scene2.querySelector(".fond").style.height = "100%";
         if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - (this.gameManager.barreDeVie.maxPV/3)){
 
-           this.scene2BG = "url('../Assets/Affiches/5827_breadstare (1).png')";
+           this.scene2BG = "url('../Assets/Affiches/Decor-2.gif')";
         }
         else if(this.gameManager.barreDeVie.pv >= this.gameManager.barreDeVie.maxPV - ((this.gameManager.barreDeVie.maxPV/3)*2)){
 
