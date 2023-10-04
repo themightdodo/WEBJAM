@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer type="module" src="main.js"></script>
     <link href="css/objetsTest.css" rel="stylesheet" type="text/css">
+    <link href="css/commun.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <div class="menu" id="menu">
-        <button>Test 1</button>
+    <div class="menu visible" id="menu">
+        <h1>Menu</h1>
+        <button>Play the game</button>
     </div>
-    <div class="scene1" id="scene1">
-        <button>Test 2</button>
-        <div class="objets">
-            <div id="test">Première Affiche</div>
+    <div class="scene1 visible" id="scene1">
+        <div class="bureau">
+            <div class="objets">
+                <div id="test">Première Affiche</div>
+            </div>
         </div>
     </div>
-    <div class="scene2" id="scene2">
+    <div class="scene2 visible" id="scene2">
         <button>Test 3</button>
+        <div class="hidden" id="mort">
+            <button class="restart">Restart</button>
+        </div>
     </div>
 </body>
 </html>

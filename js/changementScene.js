@@ -22,17 +22,17 @@ export default class changementScene{
         this.scene1 = this.gameManager.scene1;
         this.scene2 = this.gameManager.scene2;
         this.button1 = this.menu.querySelector('button');
-        this.button2 = this.scene1.querySelector('button');
+        // this.button2 = this.scene1.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
         this.tour = 0;
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
-        this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
+        // this.button2.addEventListener('click', this.Scene1Scene2.bind(this));
         this.button3.addEventListener('click', this.Scene2Scene1.bind(this));
         this.init();
     }
     init(){
-        this.menu.style.display = 'block';
+        this.menu.style.display = 'flex';
         this.scene1.style.display = 'none';
         this.scene2.style.display = 'none';
     }
@@ -48,7 +48,7 @@ export default class changementScene{
     }
     menuScene1(){
         this.menu.style.display = 'none';
-        this.scene1.style.display = 'block'
+        this.scene1.style.display = 'block';
         this.initScene1();
     }
     Scene1Scene2(){
@@ -59,7 +59,7 @@ export default class changementScene{
             console.log("JBZDMOIFNAZMOZD JAZPE%LVFQZOEPJFQMOEZKNZK?");
         }
         this.scene1.style.display = 'none';
-        this.scene2.style.display = 'block'
+        this.scene2.style.display = 'block';
     }
     Scene2Scene1(){
         this.scene2.style.display = 'none';
