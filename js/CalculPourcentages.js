@@ -80,6 +80,7 @@ export default class CalculPourcentages{
                 this.combos[1].pourcentages[2],this.combos[1].pourcentages[3],this.combos[1].pourcentages[4]);
             this.comboBuffer = [];
             console.log("combo1");
+            this.gameManager.mort = true;
             return this.combinaisons[this.combos[1].combinaison].suite;
         }
         if(this.comboBuffer[0] === this.suite[1][0]&&this.comboBuffer[1] === this.suite[1][1]&&
