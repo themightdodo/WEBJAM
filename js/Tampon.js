@@ -5,9 +5,9 @@ export default class Tampon{
     constructor(){
         this.gameManager = new GameManager();
         this.objets = this.gameManager.objets;
-        this.mainUrl = "../Assets/Affiches/Main.gif";
-       this.sceauUrl = "../Assets/Affiches/sceau.png";
-       this.tamponed = false;
+        this.mainUrl = "./Assets/Affiches/Main.gif";
+        this.sceauUrl = "./Assets/Affiches/sceau.png";
+        this.tamponed = false;
     }
     
     tampon(event){
