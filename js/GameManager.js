@@ -30,8 +30,74 @@ export default class GameManager{
             vert : "Vert",
             rouge : "Rouge",
             bleu : "Bleu",
-        }
+        };
+
+        this.affichedebut = document.querySelector("#test");
+        this.setAffiche1();
     }
+
+    setAffiche1(){   
+        this.affichedebut.style.width = "50%";
+        this.affichedebut.style.height = "fit-content";
+        this.affichedebut.style.cursor = "pointer";
+        this.affichedebut.addEventListener("click", (e) => {
+            this.onClickAffiche(element.type,e);
+            setTimeout(() => {
+                this.scene1.animate(
+                    [
+                        {transform : "translateX(-10px)"},
+                        {transform : "translateX(10px)"},
+                        {transform : "translateX(-5px)"},
+                        {transform : "translateX(5px)"},
+                        {transform : "translateX(0px)"},
+                    ],
+                    {
+                        duration : 400,
+                        easing: "ease-out",
+                    },
+                )
+            }, 300);
+        });
+        this.affichedebut.addEventListener("mouseover", function(){
+            this.affichedebut.animate(
+                [
+                    {transform:"translateY(0px)"},
+                    {transform:"translateY(-40px)"},
+                ],
+                {
+                    duration:400,
+                    easing:"ease-out",
+                }
+            )
+            this.affichedebut.style.transform = "translateY(-40px)";
+        }.bind(this));
+        this.affichedebut.addEventListener("mouseleave", function(){
+            this.affichedebut.animate(
+                [
+                    {transform:"translateY(-40px)"},
+                    {transform:"translateY(0px)"},
+                    
+                ],
+                {
+                    duration:400,
+                    easing:"ease-out",
+                }
+            )
+            this.affichedebut.style.transform = "translateY(0px)";
+        }.bind(this));
+        this.affichedebut.animate(
+            [
+                {transform : "translateY(-400px)"},
+                {transform : "translateY(0px)"},
+            ],
+            {
+                duration:600,
+                easing:"ease-out",
+            }
+        )
+    }
+
+
     onClickAffiche(type,event){
         if(this.tampon.tamponed){
             return;
