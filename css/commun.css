@@ -102,4 +102,15 @@ button{
     -o-border-radius: 8px;
 }
 
+.firstAffiche{
+    display: flex;
+    gap:32px;
+}
+.context{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
