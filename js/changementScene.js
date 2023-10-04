@@ -24,7 +24,13 @@ export default class changementScene{
         this.button1 = this.menu.querySelector('button');
         this.button3 = this.scene2.querySelector('button');
         this.restart = this.scene2.querySelector("#mort");
-        this.baseAffiche = document.querySelector("#test");
+        this.baseAffiche = document.querySelector("#firstAffiche");
+        // this.baseAffiche2 = this.baseAffiche.querySelector(".context");
+        // this.baseAffiche2text = this.baseAffiche2.querySelector('p');
+        this.baseAffiche3 = this.baseAffiche.querySelector("#affiche1");
+        console.log(this.baseAffiche);
+        console.log(this.baseAffiche2);
+        console.log(this.baseAffiche3);
         this.tour = 0;
 
         this.button1.addEventListener('click', this.menuScene1.bind(this));
@@ -67,11 +73,10 @@ export default class changementScene{
     initScene1(){
         this.tour += 1;
         console.log(this.tour);
-        this.gameManager.objets.querySelectorAll('*').forEach(element => {
-            element.remove();
-        }); 
-        if(this.tour === 1){
-            this.gameManager.objets.append(this.baseAffiche);
+        if(this.tour > 1){
+            this.gameManager.objets.querySelectorAll('*').forEach(element => {
+                element.remove();
+            }); 
         }
         this.Scene1.setupScene(this.tour);
     }
